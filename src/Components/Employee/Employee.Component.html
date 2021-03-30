@@ -1,0 +1,22 @@
+<div>
+    <input [(ngModel)]="SearchName" (input)="Filters()" type="text" name="SearchName"  value="" 
+    placeholder="John"/>
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="text-center">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of FilteredEmployee" class="text-center">
+                <td>{{employee.employeeID}}</td>
+                <td>{{employee.employeeName}}</td>
+                <td>{{employee.employeeSalary}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

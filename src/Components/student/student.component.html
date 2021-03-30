@@ -1,0 +1,24 @@
+<!--  ngIf = Only renders something if it exists ;else it does something else  -->
+<div *ngIf="mathites.length && mathites; else MITSOS"> 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+        <!--ngFor = foreach-->
+      <tr *ngFor="let stu of mathites">
+        <td>{{ stu.id }}</td>
+        <td>{{ stu.name }}</td>
+        <td>{{ stu.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #MITSOS>
+    <div class="p-4">No More Students</div>  
+</ng-template>
